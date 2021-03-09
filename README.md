@@ -70,6 +70,12 @@ get mailgun API key and mailgun domain name <br />
 <br />
 set your environment mailgun through .env <br />
 <br />
+run redis on local: <br />
+<br />
+redis link: https://redis.io/topics/quickstart <br />
+<br />
+set your environment redis through .env <br />
+<br />
 build notification source code:
 
 ```sh

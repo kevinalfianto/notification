@@ -1,18 +1,23 @@
 var amqp = require('amqplib/callback_api');
 import { NodeMailgun } from 'ts-mailgun';
 import { Email } from '../model/email';
-import * as dotenv from 'dotenv';
+var dotenv = require('dotenv');
+dotenv.config({ path: '../../.env' });
+
 const redis = require("redis");
 const client = redis.createClient({
-    host: "127.0.0.1",
-    port: 6379
+    host: process.env.REDIS_HOST,
+    port: process.env.REDIS_PORT
 });
 
 var topic = 'send_email';
 
-dotenv.config();
+const amqpURL = "amqp://" + process.env.RABBIT_MQ_HOST;
+const mailgunApiKey = process.env.MAILGUN_API_KEY;
+const mailgunDomain = process.env.MAILGUN_DOMAIN;
+const emailFrom = process.env.EMAIL_FROM;
 
-amqp.connect('amqp://localhost', function(error0, connection) {
+amqp.connect(amqpURL, function(error0, connection) {
     if (error0) {
         throw error0;
     }
@@ -40,7 +45,6 @@ amqp.connect('amqp://localhost', function(error0, connection) {
                     sendEmail(email);
                     client.set(key, "OK");
                 }
-                console.log("REPLY:");
                 console.log(reply);
             });
         }, {
@@ -52,9 +56,9 @@ amqp.connect('amqp://localhost', function(error0, connection) {
 export default function sendEmail(email: Email) {
     const mailer = new NodeMailgun();
 
-    mailer.apiKey = '4d5db45132c8a2ca31556e1a8d83f37f-afab6073-36a7e20b';
-    mailer.domain = 'sandbox891acaa02894429091474cd1d9d3a176.mailgun.org';
-    mailer.fromEmail = 'kevin.alfianto@gmail.com';
+    mailer.apiKey = mailgunApiKey || "";
+    mailer.domain = mailgunDomain || "";
+    mailer.fromEmail = emailFrom || "";
     mailer.fromTitle = email.subject;
     mailer.init();
     

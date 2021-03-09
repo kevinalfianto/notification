@@ -21,7 +21,8 @@ router.post('/', (request, response, next) => {
 });
 
 async function publishTopicSendEmail(email: Email) {
-    amqp.connect('amqp://localhost', function(error0, connection) {
+    var amqpURL = "amqp://" + process.env.RABBIT_MQ_HOST;
+    amqp.connect(amqpURL, function(error0, connection) {
         if (error0) {
             throw error0;
         }
