@@ -1,7 +1,7 @@
 # NOTIFICATION
 Notification API
 
-![alt text](https://github.com/kevinalfianto/notification/blob/master/images/notification_diagram.png?raw=true)
+![alternativetext](https://github.com/kevinalfianto/notification/blob/master/images/notification_diagram.png)
 
 npx tsc --watch
 npm run dev
@@ -36,17 +36,18 @@ download dependencies
 $ npm i
 ```
 
-run the rabbit mq on local:
-for mac: https://www.rabbitmq.com/install-homebrew.html
-for ubuntu: https://www.rabbitmq.com/install-debian.html
-
-set your environment rabbitmq through .env
-
-sign up mailgun service through https://www.mailgun.com/
-get mailgun API key and mailgun domain name
-
-set your environment mailgun through .env
-
+run the rabbit mq on local: <br />
+<br />
+for mac: https://www.rabbitmq.com/install-homebrew.html <br />
+for ubuntu: https://www.rabbitmq.com/install-debian.html <br />
+<br />
+set your environment rabbitmq through .env <br />
+<br />
+sign up mailgun service through https://www.mailgun.com/ <br />
+get mailgun API key and mailgun domain name <br />
+<br />
+set your environment mailgun through .env <br />
+<br />
 build notification source code:
 
 ```sh
