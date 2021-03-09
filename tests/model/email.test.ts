@@ -4,8 +4,8 @@ import 'mocha';
 import { expect } from 'chai';
 
 describe('Email', function() {
+  // Test construct email return correct data
   it('construct', function() {
-
     let email = new Email(["a","b"], "new subject", "new body");
     expect(email.subject).equal("new subject");
     expect(email.body).equal("new body");

@@ -4,6 +4,7 @@ import { Email } from '../model/email';
 var dotenv = require('dotenv');
 dotenv.config({ path: '.env' });
 
+// Declare redis
 const redis = require("redis");
 const client = redis.createClient({
     host: process.env.REDIS_HOST,
@@ -18,6 +19,8 @@ const mailgunApiKey = process.env.MAILGUN_API_KEY;
 const mailgunDomain = process.env.MAILGUN_DOMAIN;
 const emailFrom = process.env.EMAIL_FROM;
 
+// Will subscribe topic send_email through rabbitmq
+// then send email if there are no value for specified key in redis
 amqp.connect(amqpURL, function(error0, connection) {
     if (error0) {
         throw error0;
@@ -35,12 +38,15 @@ amqp.connect(amqpURL, function(error0, connection) {
 
         channel.consume(topic, function(msg) {
             let email = JSON.parse(msg.content) as Email;
+            // At this time, the key only recipient and subject
+            // can be improved using timestamp and so on
             var key = email.recipients + email.subject
 
             client.on("error", function(error) {
                 console.error(error);
             });
 
+            // If there are value in specified key means email has been sent before
             client.get(key, function(err, reply) {
                 if (reply == null) {
                     sendEmail(email);
@@ -54,6 +60,7 @@ amqp.connect(amqpURL, function(error0, connection) {
     });
 });
 
+// Function sendEmail will send email through mailgun
 export default function sendEmail(email: Email) {
     const mailer = new NodeMailgun();
 

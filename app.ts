@@ -6,6 +6,8 @@ const app = express()
 
 app.use(express.json());
 app.use(express.urlencoded());
+
+// Mount Controller Handler
 app.use('/send-email', send);
 
 dotenv.config();
@@ -16,7 +18,9 @@ app.use(function(req, res, next) {
     next(err);
 });
 
+// Using ENV to get PORT
 const port = process.env.PORT || 9600;
 
+// Listen request
 app.listen(port, () => console.log(`APP LISTEN ON PORT ${port}`));
 export default app;

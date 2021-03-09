@@ -5,6 +5,7 @@ var email_1 = require("../../model/email");
 require("mocha");
 var chai_1 = require("chai");
 describe('Email', function () {
+    // Test construct email return correct data
     it('construct', function () {
         var email = new email_1.Email(["a", "b"], "new subject", "new body");
         chai_1.expect(email.subject).equal("new subject");

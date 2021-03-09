@@ -1,3 +1,4 @@
+// Represent Email to make encode or decode easier
 export class Email {
     recipients: string[];
     subject: string;

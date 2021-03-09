@@ -28,6 +28,7 @@ var send = require('./controllers/send_email');
 var app = express_1.default();
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded());
+// Mount Controller Handler
 app.use('/send-email', send);
 dotenv.config();
 // catch 404 and forward to error handler
@@ -35,6 +36,8 @@ app.use(function (req, res, next) {
     var err = new Error('Not Found');
     next(err);
 });
+// Using ENV to get PORT
 var port = process.env.PORT || 9600;
+// Listen request
 app.listen(port, function () { return console.log("APP LISTEN ON PORT " + port); });
 exports.default = app;

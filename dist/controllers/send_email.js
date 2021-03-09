@@ -40,6 +40,9 @@ var express = require('express');
 var router = express.Router();
 var amqp = require('amqplib/callback_api');
 var topic = 'send_email';
+// Endpoint send-email with method POST
+// will return 201 when success
+// if there are invalid request body return 422 
 router.post('/', function (request, response, next) {
     try {
         var email = request.body;
@@ -53,6 +56,7 @@ router.post('/', function (request, response, next) {
         response.send("422");
     }
 });
+// Function publishTopicSendEmail will publish topic send_email into rabbitmq
 function publishTopicSendEmail(email) {
     return __awaiter(this, void 0, void 0, function () {
         var amqpURL;
