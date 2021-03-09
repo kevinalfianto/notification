@@ -82,6 +82,12 @@ run apps:
 $ npm run dev
 ```
 
+open new terminal to run worker:
+
+```sh
+$ npm run worker
+```
+
 unit test using mocha, to run test:
 
 ```sh
