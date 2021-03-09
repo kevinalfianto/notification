@@ -7,7 +7,7 @@ Notification API
 Notification API is build to provide better notification for merchants and end customers. This API can help them to save time with manage notification with one time request. 
 
 ## Notification Code Structure
-Notification API is build to provide better notification for merchants and end customers. This API can help them to save time with manage notification with one time request. 
+```
 .
 ├── controllers             # Contain Handler for Endpoint
 │   └── send_email          # Handler for email notification
@@ -28,6 +28,7 @@ Notification API is build to provide better notification for merchants and end c
 ├── package.json            # configuration and dependencies list
 ├── README.md               # README file
 └── tsconfig.json           # configuration for typescript
+```
 
 ## Setup
 ### Prerequisite
