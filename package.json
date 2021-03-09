@@ -15,8 +15,7 @@
     "include": [
       "tests/**/**.ts"
     ],
-    "exclude": [
-    ]
+    "exclude": []
   },
   "author": "",
   "license": "ISC",
