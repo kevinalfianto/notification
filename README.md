@@ -44,7 +44,7 @@ Notification API is build to provide better notification for merchants and end c
 - RabbitMQ
 - Mailgun
 
-### Installation
+### Installation and Run Apps
 clone notification to workspace<br />
 <br />
 
@@ -82,7 +82,7 @@ run apps:
 $ npm run dev
 ```
 
-test:
+unit test using mocha, to run test:
 
 ```sh
 $ npm run test
@@ -94,9 +94,32 @@ to generate coverage:
 $ npm run coverage
 ```
 
+### Database (not implemented yet)
+
+notification_api_keys
+
+COLUMN NAME | TYPE | DESCRIPTION |
+--- | --- | --- | 
+id | unsigned_integer | id of api key |
+api_key | string | unique random string as api key  |
+email | string | email that using api key  |
+create_at | datetime | timestamp record created  |
+update_at | datetime | timestamp record last updated  |
+
+notification_email_sent
+
+COLUMN NAME | TYPE | DESCRIPTION |
+--- | --- | --- | 
+id | unsigned_integer | id of email sent |
+email | string | unique random string as api key  |
+number | int | track how many user send notification using email  |
+create_at | datetime | timestamp record created  |
+update_at | datetime | timestamp record last updated  |
+
 ### Endpoints
 
-METHOD | ENDPOINT | Description |
+METHOD | ENDPOINT | DESCRIPTION |
 --- | --- | --- | 
 POST | /send-email | Send notification through email | 
+POST | /generate-api-key | generate api key (not implemented yet) |
 
