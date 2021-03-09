@@ -10,7 +10,7 @@ Notification API is build to provide better notification for merchants and end c
 ```
 .
 ├── controllers             # Contain Handler for Endpoint
-│   └── send_email          # Handler for email notification
+│   └── send_email          # Email notification Handler, publish topic to RabbitMQ
 ├── coverage                # Output for coverage report
 ├── dist                    # Output for compiled file (typescript into js)
 ├── images                  # Stored images for readme
@@ -21,7 +21,7 @@ Notification API is build to provide better notification for merchants and end c
 │   ├── controllers         # Unit Test for controllers
 │   └── model               # Unit test for model
 ├── workers                 # Contain worker to send notification
-│   └── send_email_worker   # Worker to send email through mailgun
+│   └── send_email_worker   # Consume topic from rabbit mq, send email through mailgun
 ├── .env                    # configuration for apps
 ├── app.ts                  # main file for application
 ├── package-lock.json       # configuration and dependencies list
