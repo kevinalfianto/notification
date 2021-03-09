@@ -1,8 +1,7 @@
 # NOTIFICATION
 Notification API
 
-[![CircleCI](https://img.shields.io/circleci/token/18735007b7837f2e0f4ad22a088919e9b3084aca/project/github/bukalapak/papyrus/master.svg?style=flat-square)](https://circleci.com/gh/bukalapak/papyrus)
-[![Coverage Status](https://opencov.bukalapak.io/badges/491/svg)](https://opencov.bukalapak.io/projects/491)
+![alt text](https://github.com/kevinalfianto/notification/blob/master/images/notification_diagram.png?raw=true)
 
 npx tsc --watch
 npm run dev
