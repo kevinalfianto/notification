@@ -23,10 +23,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
-var path_1 = __importDefault(require("path"));
 var dotenv = __importStar(require("dotenv"));
 var send = require('./routes/public/send_email');
-var basename = path_1.default.basename(module.filename);
 var app = express_1.default();
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded());
