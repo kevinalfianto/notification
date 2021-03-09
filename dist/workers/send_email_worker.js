@@ -7,7 +7,8 @@ dotenv.config({ path: '.env' });
 var redis = require("redis");
 var client = redis.createClient({
     host: process.env.REDIS_HOST,
-    port: process.env.REDIS_PORT
+    port: process.env.REDIS_PORT,
+    password: process.env.REDIS_PASSWORD,
 });
 var topic = 'send_email';
 var amqpURL = "amqp://" + process.env.RABBIT_MQ_HOST;

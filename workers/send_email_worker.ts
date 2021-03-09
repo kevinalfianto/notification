@@ -7,7 +7,8 @@ dotenv.config({ path: '.env' });
 const redis = require("redis");
 const client = redis.createClient({
     host: process.env.REDIS_HOST,
-    port: process.env.REDIS_PORT
+    port: process.env.REDIS_PORT,
+    password: process.env.REDIS_PASSWORD,
 });
 
 var topic = 'send_email';
