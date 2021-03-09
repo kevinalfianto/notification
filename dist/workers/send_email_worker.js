@@ -23,7 +23,10 @@ var amqp = require('amqplib/callback_api');
 var ts_mailgun_1 = require("ts-mailgun");
 var dotenv = __importStar(require("dotenv"));
 var redis = require("redis");
-var client = redis.createClient();
+var client = redis.createClient({
+    host: "127.0.0.1",
+    port: 6379
+});
 var topic = 'send_email';
 dotenv.config();
 amqp.connect('amqp://localhost', function (error0, connection) {
