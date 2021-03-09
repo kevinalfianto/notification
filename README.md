@@ -3,10 +3,6 @@ Notification API
 
 ![Alt text](images/notification_diagram.jpg?raw=true)
 
-npx tsc --watch
-npm run dev
-
-
 ## Description
 Notification API is build to provide better notification for merchants and end customers. This API can help them to save time with manage notification with one time request. 
 
@@ -25,13 +21,15 @@ Notification API is build to provide better notification for merchants and end c
 - Mailgun
 
 ### Installation
-clone notification to workspace
+clone notification to workspace<br />
+<br />
 
+change directory to notification:
 ```sh
 $ cd notification
 ```
 
-download dependencies
+download dependencies:
 ```sh
 $ npm i
 ```
