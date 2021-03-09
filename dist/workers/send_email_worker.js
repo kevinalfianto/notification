@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var amqp = require('amqplib/callback_api');
 var ts_mailgun_1 = require("ts-mailgun");
 var dotenv = require('dotenv');
-dotenv.config({ path: '../../.env' });
+dotenv.config({ path: '.env' });
 var redis = require("redis");
 var client = redis.createClient({
     host: process.env.REDIS_HOST,

@@ -2,7 +2,7 @@ var amqp = require('amqplib/callback_api');
 import { NodeMailgun } from 'ts-mailgun';
 import { Email } from '../model/email';
 var dotenv = require('dotenv');
-dotenv.config({ path: '../../.env' });
+dotenv.config({ path: '.env' });
 
 const redis = require("redis");
 const client = redis.createClient({
