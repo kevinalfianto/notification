@@ -1,7 +1,7 @@
 # NOTIFICATION
 Notification API
 
-![alternativetext](https://github.com/kevinalfianto/notification/blob/master/images/notification_diagram.png)
+![Alt text](images/notification_diagram.jpg?raw=true)
 
 npx tsc --watch
 npm run dev
