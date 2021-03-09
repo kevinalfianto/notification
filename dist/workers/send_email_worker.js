@@ -69,3 +69,4 @@ function sendEmail(email) {
         .then(function (result) { return console.log('Done', result); })
         .catch(function (error) { return console.error('Error: ', error); });
 }
+exports.default = sendEmail;

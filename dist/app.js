@@ -24,7 +24,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
 var dotenv = __importStar(require("dotenv"));
-var send = require('./routes/public/send_email');
+var send = require('./controllers/send_email');
 var app = express_1.default();
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded());
@@ -37,3 +37,4 @@ app.use(function (req, res, next) {
 });
 var port = process.env.PORT || 9600;
 app.listen(port, function () { return console.log("APP LISTEN ON PORT " + port); });
+exports.default = app;

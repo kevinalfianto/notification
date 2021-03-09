@@ -1,9 +1,11 @@
 var amqp = require('amqplib/callback_api');
 import { NodeMailgun } from 'ts-mailgun';
+import { Email } from '../model/email';
 import * as dotenv from 'dotenv';
 const redis = require("redis");
 const client = redis.createClient();
-const topic = 'send_email';
+const mailer = new NodeMailgun();
+var topic = 'send_email';
 
 dotenv.config();
 
@@ -32,7 +34,7 @@ amqp.connect('amqp://localhost', function(error0, connection) {
 
             client.get(key, function(err, reply) {
                 if (reply == null) {
-                    sendEmail(email);
+                    sendEmail(email, mailer);
                     client.set(key, "OK");
                 }
                 console.log("REPLY:");
@@ -44,9 +46,7 @@ amqp.connect('amqp://localhost', function(error0, connection) {
     });
 });
 
-function sendEmail(email: Email) {
-    const mailer = new NodeMailgun();
-
+export default function sendEmail(email: Email, mailer: NodeMailgun) {
     mailer.apiKey = '4d5db45132c8a2ca31556e1a8d83f37f-afab6073-36a7e20b';
     mailer.domain = 'sandbox891acaa02894429091474cd1d9d3a176.mailgun.org';
     mailer.fromEmail = 'kevin.alfianto@gmail.com';

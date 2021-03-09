@@ -1,7 +1,7 @@
 import express from "express";
 import * as dotenv from 'dotenv';
 
-var send = require('./routes/public/send_email');
+var send = require('./controllers/send_email');
 const app = express()
 
 app.use(express.json());
@@ -19,3 +19,4 @@ app.use(function(req, res, next) {
 const port = process.env.PORT || 9600;
 
 app.listen(port, () => console.log(`APP LISTEN ON PORT ${port}`));
+export default app;

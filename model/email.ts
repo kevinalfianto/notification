@@ -1,4 +1,4 @@
-class Email {
+export class Email {
     recipients: string[];
     subject: string;
     body: string;
@@ -8,4 +8,4 @@ class Email {
       this.subject = subject;
       this.body = body;
     }
-  }
+}
