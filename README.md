@@ -6,6 +6,29 @@ Notification API
 ## Description
 Notification API is build to provide better notification for merchants and end customers. This API can help them to save time with manage notification with one time request. 
 
+## Notification Code Structure
+Notification API is build to provide better notification for merchants and end customers. This API can help them to save time with manage notification with one time request. 
+.
+├── controllers             # Contain Handler for Endpoint
+│   └── send_email          # Handler for email notification
+├── coverage                # Output for coverage report
+├── dist                    # Output for compiled file (typescript into js)
+├── images                  # Stored images for readme
+├── model                   # Model data structure for Notification
+│   └── email               # Model for Email Notificationn
+├── node_modules            # Dependencies Libraries
+├── tests                   # Test files
+│   ├── controllers         # Unit Test for controllers
+│   └── model               # Unit test for model
+├── workers                 # Contain worker to send notification
+│   └── send_email_worker   # Worker to send email through mailgun
+├── .env                    # configuration for apps
+├── app.ts                  # main file for application
+├── package-lock.json       # configuration and dependencies list
+├── package.json            # configuration and dependencies list
+├── README.md               # README file
+└── tsconfig.json           # configuration for typescript
+
 ## Setup
 ### Prerequisite
 
