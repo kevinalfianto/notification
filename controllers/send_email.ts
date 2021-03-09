@@ -35,7 +35,6 @@ async function publishTopicSendEmail(email: Email) {
             });
 
             channel.sendToQueue(topic, Buffer.from(JSON.stringify(email)));
-            console.log("Sent Email %s", email.subject);
         });
 
         setTimeout(function() {

@@ -68,7 +68,6 @@ function publishTopicSendEmail(email) {
                         durable: false
                     });
                     channel.sendToQueue(topic, Buffer.from(JSON.stringify(email)));
-                    console.log("Sent Email %s", email.subject);
                 });
                 setTimeout(function () {
                     connection.close();
