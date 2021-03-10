@@ -5,7 +5,7 @@ var dotenv = require('dotenv');
 dotenv.config({ path: '.env' });
 
 // Declare redis
-const redis = require("redis");
+const redis = require('redis');
 const client = redis.createClient({
     host: process.env.REDIS_HOST,
     port: process.env.REDIS_PORT,
@@ -14,7 +14,7 @@ const client = redis.createClient({
 
 var topic = 'send_email';
 
-const amqpURL = "amqp://" + process.env.RABBIT_MQ_HOST;
+const amqpURL = process.env.RABBIT_MQ_HOST;
 const mailgunApiKey = process.env.MAILGUN_API_KEY;
 const mailgunDomain = process.env.MAILGUN_DOMAIN;
 const emailFrom = process.env.EMAIL_FROM;

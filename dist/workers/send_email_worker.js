@@ -5,14 +5,14 @@ var ts_mailgun_1 = require("ts-mailgun");
 var dotenv = require('dotenv');
 dotenv.config({ path: '.env' });
 // Declare redis
-var redis = require("redis");
+var redis = require('redis');
 var client = redis.createClient({
     host: process.env.REDIS_HOST,
     port: process.env.REDIS_PORT,
     password: process.env.REDIS_PASSWORD,
 });
 var topic = 'send_email';
-var amqpURL = "amqp://" + process.env.RABBIT_MQ_HOST;
+var amqpURL = process.env.RABBIT_MQ_HOST;
 var mailgunApiKey = process.env.MAILGUN_API_KEY;
 var mailgunDomain = process.env.MAILGUN_DOMAIN;
 var emailFrom = process.env.EMAIL_FROM;
