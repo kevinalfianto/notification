@@ -43,8 +43,10 @@ amqp.connect(amqpURL, function (error0, connection) {
                 if (reply == null) {
                     sendEmail(email);
                     client.set(key, "OK");
+                    console.log("Email Sent");
+                } else {
+                    console.log("Duplicate Sent");
                 }
-                console.log(reply);
             });
         }, {
             noAck: true
