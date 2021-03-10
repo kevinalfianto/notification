@@ -58,6 +58,11 @@ download dependencies:
 $ npm i
 ```
 
+copy .env:
+```sh
+$ cp env.sample .env
+```
+
 run the rabbit mq on local: <br />
 <br />
 for mac: https://www.rabbitmq.com/install-homebrew.html <br />
