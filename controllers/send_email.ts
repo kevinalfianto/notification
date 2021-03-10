@@ -25,7 +25,7 @@ router.post('/', (request, response, next) => {
 
 // Function publishTopicSendEmail will publish topic send_email into rabbitmq
 async function publishTopicSendEmail(email: Email) {
-    var amqpURL = "amqp://" + process.env.RABBIT_MQ_HOST;
+    var amqpURL = process.env.RABBIT_MQ_HOST;
     amqp.connect(amqpURL, function(error0, connection) {
         if (error0) {
             throw error0;

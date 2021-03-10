@@ -61,7 +61,7 @@ function publishTopicSendEmail(email) {
     return __awaiter(this, void 0, void 0, function () {
         var amqpURL;
         return __generator(this, function (_a) {
-            amqpURL = "amqp://" + process.env.RABBIT_MQ_HOST;
+            amqpURL = process.env.RABBIT_MQ_HOST;
             amqp.connect(amqpURL, function (error0, connection) {
                 if (error0) {
                     throw error0;
